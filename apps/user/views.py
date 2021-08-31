@@ -93,7 +93,7 @@ def UserInfo(request):
             rows = namedtuplefetchall(cursor)
             if (rows[0] != None):
                 return JsonResponse({"result": rows}, status=status.HTTP_200_OK)
-            return JsonResponse({"error": "data is incorrect"})
+            return JsonResponse({"error": "data is incorrect"}, status=status.HTTP_200_OK)
         except Exception:
             return JsonResponse({"error": Exception}, status=status.HTTP_400_BAD_REQUEST)
         finally:
@@ -110,7 +110,7 @@ def MemberInfo(request):
             rows = namedtuplefetchall(cursor)
             if (rows[0] != None):
                 return JsonResponse({"result": rows}, status=status.HTTP_200_OK)
-            return JsonResponse({"error": "data is incorrect"})
+            return JsonResponse({"error": "data is incorrect"}, status=status.HTTP_200_OK)
         except Exception:
             return JsonResponse({"error": Exception}, status=status.HTTP_400_BAD_REQUEST)
         finally:
