@@ -1,8 +1,6 @@
 import bcrypt
 import jwt
 
-from django.shortcuts import render
-
 # Create your views here.
 from django.db.models.query import RawQuerySet
 from django.http import request
@@ -115,3 +113,8 @@ def MemberInfo(request):
             return JsonResponse({"error": Exception}, status=status.HTTP_400_BAD_REQUEST)
         finally:
             cursor.close()
+# @api_view(['POST'])
+# email is later
+
+# fileupload is later
+# @api_view(['POST'])
